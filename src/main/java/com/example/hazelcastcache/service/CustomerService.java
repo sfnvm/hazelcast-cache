@@ -8,6 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
+import java.time.Instant;
+
 @Slf4j
 @Service
 @RequiredArgsConstructor(onConstructor_ = {@Autowired})
@@ -18,5 +20,13 @@ public class CustomerService {
   public Customer findByName(String name) throws Exception {
     log.info("cache miss");
     return customerRepository.findByName(name).orElseThrow(() -> new Exception("not found"));
+  }
+
+  @Cacheable("customer")
+  public Customer create(String name) {
+    return customerRepository.save(Customer.builder()
+        .name(name)
+        .birthday(Instant.now())
+        .build());
   }
 }
