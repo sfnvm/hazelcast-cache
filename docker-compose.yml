@@ -1,0 +1,28 @@
+version: "3.7"
+services:
+  api_service_1:
+    build: .
+    restart: always
+    network_mode: host
+    depends_on:
+      - maria_db
+    environment:
+      - SERVER_PORT=8080
+  api_service_2:
+    build: .
+    restart: always
+    network_mode: host
+    depends_on:
+      - maria_db
+    environment:
+      - SERVER_PORT=8081
+  maria_db:
+    image: "mariadb:10.5.8"
+    restart: always
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_DATABASE: sfnvm
+      MYSQL_USER: example-user
+      MYSQL_PASSWORD: my_cool_secret
+      MYSQL_ROOT_PASSWORD: my-secret-pw
