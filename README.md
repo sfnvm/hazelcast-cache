@@ -1,6 +1,7 @@
 ### Shorthand commands
 
 #### Default
+
 ```shell
 $ java -jar hazel-cast-cache-0.0.1-SNAPSHOT.jar --server.port=8080 --hazelcast.port=5701
 $ java -jar hazel-cast-cache-0.0.1-SNAPSHOT.jar --server.host=8081 --hazelcast.port=5702
