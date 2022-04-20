@@ -3,6 +3,7 @@ services:
   api_service_1:
     build: .
     restart: always
+    # This type of network_mode seem broken on MacOS, TODO: Investigate later on
     network_mode: host
     depends_on:
       - maria_db
@@ -11,13 +12,14 @@ services:
   api_service_2:
     build: .
     restart: always
+    # This type of network_mode seem broken on MacOS, TODO: Investigate later on
     network_mode: host
     depends_on:
       - maria_db
     environment:
       - SERVER_PORT=8081
   maria_db:
-    image: "mariadb:10.5.8"
+    image: "mariadb:lastest"
     restart: always
     ports:
       - "3306:3306"
