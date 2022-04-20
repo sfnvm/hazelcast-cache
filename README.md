@@ -1,3 +1,7 @@
+### Project Requirements
+
+- Eureka server run default: 8761 port
+
 ### Shorthand commands
 
 #### Default
