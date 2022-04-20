@@ -1,6 +1,6 @@
 spring:
   application:
-    name: Service-1
+    name: Service-2
   datasource:
     driverClassName: org.mariadb.jdbc.Driver
     url: jdbc:mariadb:failover://localhost:3306/sfnvm?autoReconnect=true

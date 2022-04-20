@@ -1,5 +1,15 @@
 hazelcast:
+  cluster-name: hazelcast-cluster
   network:
+    port:
+      auto-increment: true
+      port-count: 100
+      port: 5701
     join:
       multicast:
+        enabled: false
+      eureka:
         enabled: true
+        self-registration: true
+        namespace: hazelcast
+        use-metadata-for-host-and-port: true

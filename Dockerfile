@@ -1,4 +1,5 @@
-FROM openjdk:17-jdk-alpine
+#FROM openjdk:17-jdk-alpine
+FROM openjdk:17
 LABEL maintainer="trungpt.dev@gmail.com"
 ARG JAR_FILE=target/*.jar
 COPY ${JAR_FILE} app.jar

@@ -22,7 +22,6 @@ public class CustomerService {
     return customerRepository.findByName(name).orElseThrow(() -> new Exception("not found"));
   }
 
-  @Cacheable("customer")
   public Customer create(String name) {
     return customerRepository.save(Customer.builder()
         .name(name)

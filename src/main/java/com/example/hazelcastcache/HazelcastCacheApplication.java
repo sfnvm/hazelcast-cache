@@ -8,8 +8,8 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 @SpringBootApplication
 @EnableDiscoveryClient
 @EnableCaching
-public class HazelCastCacheApplication {
+public class HazelcastCacheApplication {
   public static void main(String[] args) {
-    SpringApplication.run(HazelCastCacheApplication.class, args);
+    SpringApplication.run(HazelcastCacheApplication.class, args);
   }
 }
